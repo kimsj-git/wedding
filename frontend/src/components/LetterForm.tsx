@@ -1,11 +1,13 @@
 import { useRef } from "react";
+import "./LetterForm.css";
+import letterImg from "../assets/icons/letter.png";
 
 const LetterForm: React.FC<{
   onAddLetter: (name: string, password: string, message: string) => void;
 }> = (props) => {
   const letterNameInputRef = useRef<HTMLInputElement>(null);
   const letterPasswordInputRef = useRef<HTMLInputElement>(null);
-  const letterMessageInputRef = useRef<HTMLInputElement>(null);
+  const letterMessageInputRef = useRef<HTMLTextAreaElement>(null);
 
   const submitHandler = (event: React.FormEvent) => {
     event.preventDefault();
@@ -26,9 +28,12 @@ const LetterForm: React.FC<{
   };
 
   return (
-    <div>
-      <h2>방명록</h2>
-      <form onSubmit={submitHandler}>
+    <div className="visitor-book">
+      <div className="visitor-book-header">
+        <img src={letterImg} />
+        <h2>방명록</h2>
+      </div>
+      <form onSubmit={submitHandler} className="visior-book-form">
         <div
           style={{
             display: "flex",
@@ -43,7 +48,12 @@ const LetterForm: React.FC<{
           <input type="password" id="pw" ref={letterPasswordInputRef} />
 
           <label htmlFor="message">메시지</label>
-          <input type="text" id="message" ref={letterMessageInputRef} />
+          <textarea
+            id="message"
+            rows={3}
+            cols={30}
+            ref={letterMessageInputRef}
+          ></textarea>
 
           <button type="submit">방명록 남기기</button>
         </div>
