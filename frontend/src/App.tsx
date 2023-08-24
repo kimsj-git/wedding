@@ -6,6 +6,8 @@ import LetterForm from "./components/LetterForm";
 
 import green5 from "./assets/images/green_5.jpg";
 
+import flowerImg from "./assets/icons/flower.png";
+
 function App() {
   const [letters, setLetters] = useState<Letter[]>([]);
 
@@ -24,10 +26,17 @@ function App() {
 
   return (
     <>
-      <h1>Wedding!</h1>
+      <div className="header-text">
+        <img src={flowerImg} width="15%" />
+        <p>신희창</p>
+        <p>김서정</p>
+        <p>결혼합니다</p>
+      </div>
       <img src={green5} width="100%" />
-      <LetterForm onAddLetter={addLetterHandler} />
-      <LetterList items={letters} onDeleteLetter={deleteLetterHandler} />
+      <div style={{ backgroundColor: "rgba(254,255,234)" }}>
+        <LetterForm onAddLetter={addLetterHandler} />
+        <LetterList items={letters} onDeleteLetter={deleteLetterHandler} />
+      </div>
     </>
   );
 }

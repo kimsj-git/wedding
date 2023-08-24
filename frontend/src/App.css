@@ -1,8 +1,19 @@
 #root {
-  max-width: 412px;
+  max-width: 480px;
   margin: 0 auto;
-  padding: 2rem;
+  /* padding: 2rem; */
   text-align: center;
+}
+
+.header-text {
+  padding: 2rem 0;
+}
+
+.header-text p {
+  text-decoration: none;
+  margin: 0;
+  font-size: 1.2rem;
+  color: black;
 }
 
 .logo {

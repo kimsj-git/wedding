@@ -7,15 +7,17 @@ const LetterList: React.FC<{
   onDeleteLetter: (id: string) => void;
 }> = (props) => {
   return (
-    <ul>
-      {props.items.map((item) => (
-        <LetterItem
-          key={item.id}
-          item={item}
-          onDeleteLetter={() => props.onDeleteLetter(item.id)}
-        />
-      ))}
-    </ul>
+    <div>
+      <ul style={{ listStyleType: "none", padding: 0 }}>
+        {props.items.map((item) => (
+          <LetterItem
+            key={item.id}
+            item={item}
+            onDeleteLetter={() => props.onDeleteLetter(item.id)}
+          />
+        ))}
+      </ul>
+    </div>
   );
 };
 

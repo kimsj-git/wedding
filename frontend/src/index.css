@@ -1,5 +1,6 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
+  font-family: "MapoFlowerIsland";
   line-height: 1.5;
   font-weight: 400;
 
@@ -48,7 +49,8 @@ button {
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  /* border-color: #646cff; */
+  background-color: lightgray;
 }
 button:focus,
 button:focus-visible {
@@ -66,4 +68,12 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+@font-face {
+  font-family: "MapoFlowerIsland";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoFlowerIslandA.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
 }

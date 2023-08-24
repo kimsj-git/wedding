@@ -31,16 +31,11 @@ const LetterForm: React.FC<{
     <div className="visitor-book">
       <div className="visitor-book-header">
         <img src={letterImg} />
-        <h2>방명록</h2>
+        <p>Guest Book</p>
       </div>
-      <form onSubmit={submitHandler} className="visior-book-form">
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-          }}
-        >
+
+      <form onSubmit={submitHandler}>
+        <div className="visitor-book-form">
           <label htmlFor="name">이름</label>
           <input type="text" id="name" ref={letterNameInputRef} />
 
