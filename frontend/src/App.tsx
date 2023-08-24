@@ -25,7 +25,7 @@ function App() {
   return (
     <>
       <h1>Wedding!</h1>
-      <img src={green5} width="500px" />
+      <img src={green5} width="100%" />
       <LetterForm onAddLetter={addLetterHandler} />
       <LetterList items={letters} onDeleteLetter={deleteLetterHandler} />
     </>
