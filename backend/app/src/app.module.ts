@@ -15,7 +15,7 @@ import { Board } from './board/entities/board.entity';
       password: process.env.DB_PASSWORD,
       database: process.env.DB_DATABASE,
       entities: [Board],
-      synchronize: true,
+      synchronize: false,
     }),
     BoardModule,
   ],
