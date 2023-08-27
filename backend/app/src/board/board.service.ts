@@ -17,16 +17,18 @@ export class BoardService {
   }
 
   async findAll() {
-    const boardList = await this.boardRepository.find();
+    const boardList = await this.boardRepository.find({
+      order: { createdAt: 'DESC' },
+    });
     const boardListDto = boardList.map((board) => {
-      return { name: board.name, content: board.content };
+      return { id: board.id, name: board.name, content: board.content };
     });
     return boardListDto;
   }
 
   async findOne(id: number) {
     const board = await this.boardRepository.findOne({ where: { id } });
-    return { name: board.name, content: board.content };
+    return { id: board.id, name: board.name, content: board.content };
   }
 
   // update(id: number, updateBoardDto: UpdateBoardDto) {
@@ -34,7 +36,8 @@ export class BoardService {
   // }
 
   async remove(id: number): Promise<number> {
-    await this.boardRepository.delete(id);
-    return id;
+    const deleteResult = await this.boardRepository.delete(id);
+    // 삭제된 행 개수 반환
+    return deleteResult.affected;
   }
 }
