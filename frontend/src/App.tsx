@@ -12,7 +12,7 @@ function App() {
   // const API_URL = "http://localhost:8200/board/"
   const API_URL = "http://wed_backend:8200/board/";
   const [letters, setLetters] = useState<Letter[]>([]);
-
+  
   useEffect(() => {
     fetch(API_URL, {
       method: "GET",
@@ -20,7 +20,8 @@ function App() {
       .then((res) => res.json())
       .then((data) => {
         const initLetters = data.map(
-          (item) => new Letter(item.id, item.name, item.content)
+          (item: { id: number; name: string; content: string }) =>
+            new Letter(item.id, item.name, item.content)
         );
         setLetters(initLetters);
       })
