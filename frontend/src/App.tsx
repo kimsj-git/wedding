@@ -10,9 +10,9 @@ import flowerImg from "./assets/icons/flower.png";
 
 function App() {
   // const API_URL = "http://localhost:8200/board/"
-  const API_URL = "http://wed_backend:8200/board/";
+  const API_URL = "https://wedding.kimsj.dev/board/";
   const [letters, setLetters] = useState<Letter[]>([]);
-  
+
   useEffect(() => {
     fetch(API_URL, {
       method: "GET",
