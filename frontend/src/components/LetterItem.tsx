@@ -2,7 +2,7 @@ import Letter from "../models/letter";
 
 const LetterItem: React.FC<{
   item: Letter;
-  onDeleteLetter: (id: string) => void;
+  onDeleteLetter: (id: number) => void;
 }> = (props) => {
   return (
     <div style={{ margin: "1rem" }}>

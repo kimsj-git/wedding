@@ -1,13 +1,11 @@
 class Letter {
-  id: string;
+  id: number;
   name: string;
-  password: string;
   message: string;
 
-  constructor(name: string, password: string, message: string) {
-    this.id = new Date().toISOString();
+  constructor(id: number, name: string, message: string) {
+    this.id = id;
     this.name = name;
-    this.password = password;
     this.message = message;
   }
 }

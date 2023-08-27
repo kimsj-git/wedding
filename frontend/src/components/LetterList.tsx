@@ -4,7 +4,7 @@ import LetterItem from "./LetterItem";
 
 const LetterList: React.FC<{
   items: Letter[];
-  onDeleteLetter: (id: string) => void;
+  onDeleteLetter: (id: number) => void;
 }> = (props) => {
   return (
     <div>
