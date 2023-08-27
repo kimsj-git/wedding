@@ -11,6 +11,9 @@ export class Board {
   @Column()
   content: string;
 
+  @Column()
+  password: string;
+
   @CreateDateColumn()
   createdAt: Date;
   

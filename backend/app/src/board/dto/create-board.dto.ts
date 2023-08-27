@@ -6,4 +6,7 @@ export class CreateBoardDto {
 
   @IsString()
   readonly content: string;
+
+  @IsString()
+  readonly password: string;
 }
