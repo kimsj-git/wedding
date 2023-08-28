@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { CreateBoardDto } from './dto/create-board.dto';
 import { UpdateBoardDto } from './dto/update-board.dto';
 import { Board } from './entities/board.entity';
@@ -28,6 +28,11 @@ export class BoardService {
 
   async findOne(id: number) {
     const board = await this.boardRepository.findOne({ where: { id } });
+    if (!board)
+      throw new HttpException(
+        `No board item with ID: ${id}`,
+        HttpStatus.BAD_REQUEST,
+      );
     return { id: board.id, name: board.name, content: board.content };
   }
 
@@ -35,9 +40,17 @@ export class BoardService {
   //   return `This action updates a #${id} board`;
   // }
 
-  async remove(id: number): Promise<number> {
-    const deleteResult = await this.boardRepository.delete(id);
-    // 삭제된 행 개수 반환
-    return deleteResult.affected;
+  async remove(id: number, inputPw: string): Promise<boolean> {
+    const board = await this.boardRepository.findOne({ where: { id } });
+    if (!board) {
+      throw new HttpException(
+        `No board item with ID: ${id}`,
+        HttpStatus.BAD_REQUEST,
+      );
+    }
+    if (board.password === inputPw) {
+      await this.boardRepository.delete(id);
+      return true;
+    } else return false;
   }
 }
