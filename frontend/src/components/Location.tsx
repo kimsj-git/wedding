@@ -14,6 +14,7 @@ const Location = () => {
       position: new window.naver.maps.LatLng(37.484908, 127.095163),
       map: map,
     });
+    console.log(marker)
   }, []);
 
   const naverMapHandler = () => {
