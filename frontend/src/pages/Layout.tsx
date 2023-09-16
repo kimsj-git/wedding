@@ -1,4 +1,4 @@
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode } from "react";
 
 import green5 from "../assets/images/green_5.jpg";
 import flowerImg from "../assets/icons/flower.png";
