@@ -1,5 +1,9 @@
 import { useEffect } from "react";
 import elegantBorder from "../assets/icons/elegant_leaf.png";
+import "./Location.css";
+
+import navermapIcon from "../assets/icons/navermap_icon.png";
+import kakaonaviIcon from "../assets/icons/kakaonavi_icon.png";
 
 const Location = () => {
   useEffect(() => {
@@ -14,7 +18,7 @@ const Location = () => {
       position: new window.naver.maps.LatLng(37.484908, 127.095163),
       map: map,
     });
-    console.log(marker)
+    console.log(marker);
   }, []);
 
   const naverMapHandler = () => {
@@ -29,26 +33,30 @@ const Location = () => {
   };
   return (
     <div
-      style={{ display: "flex", flexDirection: "column", alignItems: "center", backgroundColor: "#f9f9f9", padding: "1rem 0" }}
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        backgroundColor: "#f9f9f9",
+        padding: "1rem 0",
+      }}
     >
       <img src={elegantBorder} width="12%" />
       <p style={{ fontSize: "1.5rem" }}>오시는 길</p>
-      <p style={{ fontSize: "1.2rem", margin: "0" }}>필경재 충효당</p>
+      <p style={{ margin: "0", width: "75%" }}>
+        필경재는 3호선 수서역 1번출구에서 일원역 방향으로 800m 직진 수서동성당
+        옆 한옥건물입니다.
+      </p>
       <p style={{ color: "gray" }}>서울특별시 강남구 수서동 광평로 205</p>
       <div id="map" style={{ width: "90%", height: "20rem" }} />
-      <div style={{ display: "flex" }}>
-        <div
-          onClick={naverMapHandler}
-          style={{ padding: "0.5rem", cursor: "pointer" }}
-        >
-          네이버 지도
+      <div className="mapBtnContainer">
+        <div className="mapRedirectBtn" onClick={naverMapHandler}>
+          <img src={navermapIcon} />
+          <p>네이버 지도</p>
         </div>
-        <div style={{ padding: "0.5rem" }}>|</div>
-        <div
-          onClick={kakaoMapHandler}
-          style={{ padding: "0.5rem", cursor: "pointer" }}
-        >
-          카카오 맵
+        <div className="mapRedirectBtn" onClick={kakaoMapHandler}>
+          <img src={kakaonaviIcon} />
+          <p>카카오 네비</p>
         </div>
       </div>
     </div>
