@@ -1,0 +1,20 @@
+.family-name {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: end;
+}
+
+.family-name__parents {
+    font-size: 1.4rem;
+    color: black;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.family-name__child {
+    font-size: 1.4rem;
+    margin-left: 1rem;
+    margin-top: 0;
+    margin-bottom: 0;
+}
