@@ -1,6 +1,6 @@
 .mapBtnContainer {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   width: 90%;
   background-color: #edebe9;
 }
