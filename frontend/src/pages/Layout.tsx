@@ -16,7 +16,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <p>김서정</p>
         <p>결혼합니다</p>
       </div>
-      <img src={green5} width="100%" />
+      <div>
+        <img src={green5} width="100%" />
+      </div>
       {children}
     </>
   );

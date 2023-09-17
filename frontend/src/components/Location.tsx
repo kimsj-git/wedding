@@ -43,7 +43,7 @@ const Location = () => {
     >
       <img src={elegantBorder} width="12%" />
       <p style={{ fontSize: "1.5rem" }}>오시는 길</p>
-      <p style={{ margin: "0", width: "75%" }}>
+      <p style={{ margin: "0", width: "65%", wordBreak: "keep-all" }}>
         필경재는 3호선 수서역 1번출구에서 일원역 방향으로 800m 직진 수서동성당
         옆 한옥건물입니다.
       </p>

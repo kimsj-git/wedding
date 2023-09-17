@@ -21,9 +21,9 @@ const FamilyMessage: React.FC<{}> = () => {
           alignItems: "center",
         }}
       >
-        <p style={{ fontSize: "1.2rem", marginBottom: "0.5rem" }}>신한수 최미숙</p>
+        <p style={{ fontSize: "1.4rem", marginBottom: "0.5rem" }}>신한수 최미숙</p>
         <p style={{ marginLeft: "0.5rem",  marginBottom: "0.5rem" }}>의 장남</p>
-        <p style={{ fontSize: "1.2rem", marginLeft: "1rem",marginBottom: "0.5rem" }}>희창</p>
+        <p style={{ fontSize: "1.4rem", marginLeft: "1rem",marginBottom: "0.5rem" }}>희창</p>
       </div>
       <div
         style={{
@@ -33,9 +33,9 @@ const FamilyMessage: React.FC<{}> = () => {
           alignItems: "center",
         }}
       >
-        <p style={{ color: "black",fontSize: "1.2rem", marginTop: "0.5rem" }}>김헌식 정명숙</p>
+        <p style={{ color: "black",fontSize: "1.4rem", marginTop: "0.5rem" }}>김헌식 정명숙</p>
         <p style={{ marginLeft: "0.5rem",marginTop: "0.5rem" }}>의 장녀</p>
-        <p style={{ fontSize: "1.2rem", marginLeft: "1rem",marginTop: "0.5rem" }}>서정</p>
+        <p style={{ fontSize: "1.4rem", marginLeft: "1rem",marginTop: "0.5rem" }}>서정</p>
       </div>
     </div>
   );
