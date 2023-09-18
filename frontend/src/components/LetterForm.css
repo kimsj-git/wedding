@@ -1,0 +1,28 @@
+.visitor-book {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(254,255,234,255);
+}
+
+.visitor-book-header {
+  width: 200px;
+  color: #9bb872;
+}
+
+.visitor-book-header img {
+  width: 40%;
+}
+
+.visitor-book-header p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.visitor-book-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem;
+}
