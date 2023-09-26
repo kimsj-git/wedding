@@ -5,6 +5,15 @@
   text-align: center;
 }
 
+.layout {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.layout.show {
+  opacity: 1;
+}
+
 .header-text {
   padding: 2rem 0;
 }
