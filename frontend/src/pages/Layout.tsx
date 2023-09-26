@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 
 import green5 from "../assets/images/green_5.jpg";
 import flowerImg from "../assets/icons/flower.png";
+import PhotoGallery from "../components/PhotoGallery";
 
 interface LayoutProps {
   children: ReactNode;
@@ -20,6 +21,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <img src={green5} width="100%" />
       </div>
       {children}
+      <PhotoGallery />
     </>
   );
 };
