@@ -11,6 +11,7 @@ const Location = () => {
     const mapOptions = {
       center: new window.naver.maps.LatLng(37.484908, 127.095163),
       zoom: 14,
+      draggable: false,
     };
     const map = new window.naver.maps.Map(mapDiv, mapOptions);
 
