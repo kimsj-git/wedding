@@ -1,6 +1,6 @@
 :root {
   /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
-  font-family: "MapoFlowerIsland";
+  font-family: "NotoSerifKR";
   line-height: 1.5;
   font-weight: 400;
   color: #213547;
@@ -74,6 +74,13 @@ button:focus-visible {
   font-family: "MapoFlowerIsland";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoFlowerIslandA.woff")
     format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NotoSerifKR';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_two@1.0/NotoSerifKR.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
