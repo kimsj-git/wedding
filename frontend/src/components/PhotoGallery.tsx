@@ -4,7 +4,7 @@ import ImageListItem from "@mui/material/ImageListItem";
 import elegantBorder from "../assets/icons/elegant_leaf.png";
 
 import bride_1 from "../assets/images/bride_1.jpg";
-import bride_2 from "../assets/images/bride_2.jpg";
+// import bride_2 from "../assets/images/bride_2.jpg";
 import green_1 from "../assets/images/green_1.jpg";
 import green_4 from "../assets/images/green_4.jpg";
 import green_5 from "../assets/images/green_5.jpg";
