@@ -29,7 +29,7 @@ const Account: React.FC<{}> = () => {
       <div
         style={{
           display: "flex",
-          justifyContent: "space-between",
+          justifyContent: "space-evenly",
           margin: "0 1rem 1rem 1rem",
         }}
       >
