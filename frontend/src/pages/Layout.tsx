@@ -16,7 +16,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   useEffect(() => {
     const loadTimer = setTimeout(() => {
       setIsLoad(true);
-    }, 1500);
+    }, 1000);
 
     if (isLoad) {
       const showImageTimer = setTimeout(() => {
