@@ -38,7 +38,7 @@ const PhotoGallery: React.FC<{}> = () => {
     { img: sea_7, title: "sea_7" },
   ];
   return (
-    <div style={{padding: "2rem 0"}}>
+    <div style={{padding: "2rem 0", backgroundColor: "#f9f9f9"}}>
       <img src={elegantBorder} width="12%" />
       <p style={{ fontSize: "1.5rem" }}>사진첩</p>
       <ImageList variant="masonry" cols={2} gap={8}>
