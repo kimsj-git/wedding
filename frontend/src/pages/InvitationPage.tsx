@@ -1,5 +1,4 @@
 import Layout from "./Layout";
-import Location from "../components/Location";
 import FamilyMessage from "../components/FamilyMessage";
 
 const InvitagionPage: React.FC<{}> = () => {
@@ -10,7 +9,6 @@ const InvitagionPage: React.FC<{}> = () => {
         <p style={{color: "black", fontSize: "1.4rem", margin: "0.5rem 0"}}>필경재 충효당</p>
       </div>
       <FamilyMessage/>
-      <Location/>
     </Layout>
   );
 };
