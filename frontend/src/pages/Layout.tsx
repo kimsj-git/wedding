@@ -1,9 +1,12 @@
 import { ReactNode, useEffect, useState } from "react";
 
-import green5 from "../assets/images/green_5.jpg";
-import flowerImg from "../assets/icons/flower.png";
 import PhotoGallery from "../components/PhotoGallery";
 import Loader from "../components/Loader";
+import Location from "../components/Location";
+import Account from "../components/Account";
+
+import green5 from "../assets/images/green_5.jpg";
+import flowerImg from "../assets/icons/flower.png";
 
 interface LayoutProps {
   children: ReactNode;
@@ -12,6 +15,16 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   const [isLoad, setIsLoad] = useState(false);
   const [showImage, setShowImage] = useState(false);
+  const isLocation = ["/invitation", "/inform"].includes(
+    window.location.pathname
+  )
+    ? true
+    : false;
+  const isAccount = ["/invitation", "/inform"].includes(
+    window.location.pathname
+  )
+    ? true
+    : false;
 
   useEffect(() => {
     const loadTimer = setTimeout(() => {
@@ -47,6 +60,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           </div>
 
           {children}
+          {isLocation && <Location />}
+          {isAccount && <Account />}
           <PhotoGallery />
         </div>
       )}

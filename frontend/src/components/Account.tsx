@@ -25,7 +25,7 @@ const Account: React.FC<{}> = () => {
   ];
 
   return (
-    <div style={{ padding: "0 0 3rem 0" }}>
+    <div style={{ padding: "3rem 0" }}>
       <div
         style={{
           display: "flex",
