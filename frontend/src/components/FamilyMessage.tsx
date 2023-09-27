@@ -1,5 +1,6 @@
 import "./FamilyMessage.css";
 import elegantLeafImg from "../assets/icons/elegant_leaf.png";
+import FamilyInfo from "./FamilyInfo";
 
 const FamilyMessage: React.FC<{}> = () => {
   const ourMessage: string[] = [
@@ -14,16 +15,7 @@ const FamilyMessage: React.FC<{}> = () => {
         <p key={index} style={{ textAlign: "center", wordBreak: "keep-all" }}>{line}</p>
       ))}
       <br></br>
-      <div className="family-name">
-        <p className="family-name__parents">신한수 최미숙</p>
-        <p style={{ margin: "0 0 0 0.5rem" }}>의 장남</p>
-        <p className="family-name__child">희창</p>
-      </div>
-      <div className="family-name">
-        <p className="family-name__parents">김헌식 정명숙</p>
-        <p style={{ margin: "0 0 0 0.5rem" }}>의 장녀</p>
-        <p className="family-name__child">서정</p>
-      </div>
+      <FamilyInfo/>
     </div>
   );
 };
