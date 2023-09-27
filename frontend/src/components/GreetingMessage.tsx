@@ -11,8 +11,8 @@ const GreetingMessage: React.FC<{}> = () => {
   return (
     <div style={{padding: "2rem", paddingBottom: "5rem"}}>
       <img src={elegantLeafImg} width="15%" style={{padding: "1rem 0"}} />
-      {ourMessage.map((line) => (
-        <p style={{ textAlign: "center", wordBreak: "keep-all" }}>{line}</p>
+      {ourMessage.map((line, index) => (
+        <p key={index} style={{ textAlign: "center", wordBreak: "keep-all" }}>{line}</p>
       ))}
     </div>
   );
