@@ -31,7 +31,7 @@ const LetterForm: React.FC<{
     <div className="visitor-book">
       <div className="visitor-book-header">
         <img src={letterImg} />
-        <p>Guest Book</p>
+        <p>방명록</p>
       </div>
 
       <form onSubmit={submitHandler}>
