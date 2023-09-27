@@ -3,6 +3,8 @@ import Button from "@mui/material/Button";
 import CopyButton from "./CopyButton";
 import "./Account.css";
 
+import elegantBorder from "../assets/icons/elegant_leaf.png";
+
 const Account: React.FC<{}> = () => {
   const [isGroom, setIsGroom] = useState(false);
   const toggleGroomAccounts = () => {
@@ -26,6 +28,8 @@ const Account: React.FC<{}> = () => {
 
   return (
     <div style={{ padding: "3rem 0" }}>
+      <img src={elegantBorder} width="12%" />
+      <p style={{ fontSize: "1.5rem" }}>마음 전하실 곳</p>
       <div
         style={{
           display: "flex",

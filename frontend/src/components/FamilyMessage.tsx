@@ -13,7 +13,7 @@ const FamilyMessage: React.FC<{}> = () => {
       {ourMessage.map((line, index) => (
         <p key={index} style={{ textAlign: "center", wordBreak: "keep-all" }}>{line}</p>
       ))}
-
+      <br></br>
       <div className="family-name">
         <p className="family-name__parents">신한수 최미숙</p>
         <p style={{ margin: "0 0 0 0.5rem" }}>의 장남</p>
