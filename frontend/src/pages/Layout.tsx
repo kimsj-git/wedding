@@ -20,9 +20,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   )
     ? true
     : false;
-  const isAccount = ["/invitation", "/inform"].includes(
-    window.location.pathname
-  )
+  const isAccount = ["/inform"].includes(window.location.pathname)
     ? true
     : false;
 

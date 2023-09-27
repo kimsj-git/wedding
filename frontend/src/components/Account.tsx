@@ -85,7 +85,7 @@ const Account: React.FC<{}> = () => {
         brideAccounts.map((data) => (
           <div style={{ width: "90%", margin: "auto", padding: "0.5rem" }}>
             <p style={{ margin: "0", fontSize: "1rem", textAlign: "start" }}>
-              예금주: {data.name}
+              연락처: {data.name}
             </p>
             <div
               style={{
