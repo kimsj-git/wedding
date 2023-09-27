@@ -4,6 +4,7 @@ import PhotoGallery from "../components/PhotoGallery";
 import Loader from "../components/Loader";
 import Location from "../components/Location";
 import Account from "../components/Account";
+import Board from "../components/Board";
 
 import green5 from "../assets/images/green_5.jpg";
 import flowerImg from "../assets/icons/flower.png";
@@ -21,6 +22,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     ? true
     : false;
   const isAccount = ["/inform"].includes(window.location.pathname)
+    ? true
+    : false;
+  const isBoard = ["/friends"].includes(window.location.pathname)
     ? true
     : false;
 
@@ -61,6 +65,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           {isLocation && <Location />}
           {isAccount && <Account />}
           <PhotoGallery />
+          {isBoard && <Board />}
         </div>
       )}
     </>

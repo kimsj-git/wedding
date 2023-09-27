@@ -8,7 +8,7 @@ const LetterItem: React.FC<{
     <div style={{ margin: "1rem" }}>
       <li
         style={{
-          backgroundColor: "#ffffff",
+          backgroundColor: "#f9f9f9",
           boxShadow: "2px 2px 5px -2px grey",
         }}
       >
