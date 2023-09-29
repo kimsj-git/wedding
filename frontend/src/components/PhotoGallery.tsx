@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import "./PhotoGallery.css";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import elegantBorder from "../assets/icons/elegant_leaf.png";
@@ -17,8 +18,9 @@ import stone_2 from "../assets/images/stone_2.jpg";
 import stone_3 from "../assets/images/stone_3.jpg";
 import stone_4 from "../assets/images/stone_4.jpg";
 import stone_5 from "../assets/images/stone_5.jpg";
+import { Modal } from "@mui/material";
 
-const PhotoGallery: React.FC<{}> = () => {
+const PhotoGallery: React.FC = () => {
   const itemData = [
     { img: green_4, title: "green_4" },
     { img: green_1, title: "green_1" },
@@ -35,22 +37,37 @@ const PhotoGallery: React.FC<{}> = () => {
     { img: sea_3, title: "sea_3" },
     { img: sea_2, title: "sea_2" },
   ];
+  // 엘레강트...그잡채
+  const [isOpen, setIsOpen] = useState(false);
+  const [clickedTarget, setClickedTarget] = useState<number>(0);
+  const onImgClickHandler = (event: React.MouseEvent) => {
+    event.target instanceof HTMLImageElement &&
+      setClickedTarget(Number(event.target.id));
+    setIsOpen(!isOpen);
+  };
+
   return (
-    <div style={{padding: "2rem 0", backgroundColor: "#f9f9f9"}}>
+    <div style={{ padding: "2rem 0", backgroundColor: "#f9f9f9" }}>
       <img src={elegantBorder} width="12%" />
       <p style={{ fontSize: "1.5rem" }}>사진첩</p>
       <ImageList variant="masonry" cols={2} gap={8}>
-        {itemData.map((item) => (
+        {itemData.map((item, idx) => (
           <ImageListItem key={item.img}>
             <img
+              id={String(idx)}
               srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
               src={`${item.img}?w=248&fit=crop&auto=format`}
               alt={item.title}
               loading="lazy"
+              className="singularImg"
+              onClick={onImgClickHandler}
             />
           </ImageListItem>
         ))}
       </ImageList>
+      <Modal open={isOpen} onClose={() => setIsOpen(false)}>
+        <img className="modalImg" src={itemData[clickedTarget].img} />
+      </Modal>
     </div>
   );
 };

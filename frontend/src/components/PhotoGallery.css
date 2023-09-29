@@ -1,0 +1,14 @@
+.singularImg:hover {
+  cursor: pointer;
+}
+
+.modalImg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 70%;
+  max-height: 70%;
+  border: 2px solid #000;
+  transition: all 1s;
+}
