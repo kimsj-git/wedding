@@ -1,13 +1,23 @@
-.singularImg:hover {
-  cursor: pointer;
+.modal-transition {
+  border: 2px solid #000;
 }
 
-.modal-transition {
+.swipe-container {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  max-width: 70%;
-  max-height: 70%;
-  border: 2px solid #000;
+  display: flex;
+  overflow: auto;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+}
+
+.swipe-container img {
+  cursor: pointer;
+  max-width: 95%;
+  max-height: 95%;
+  scroll-snap-align: start;
+  padding: 1rem 1rem 1rem 0.5rem;
+  margin: auto;
 }

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./PhotoGallery.css";
-import ImageList from "@mui/material/ImageList";
-import ImageListItem from "@mui/material/ImageListItem";
+import { Modal, ImageList, ImageListItem } from "@mui/material";
 import elegantBorder from "../assets/icons/elegant_leaf.png";
 
 import bride_1 from "../assets/images/bride_1.jpg";
@@ -18,7 +17,6 @@ import stone_2 from "../assets/images/stone_2.jpg";
 import stone_3 from "../assets/images/stone_3.jpg";
 import stone_4 from "../assets/images/stone_4.jpg";
 import stone_5 from "../assets/images/stone_5.jpg";
-import { Modal } from "@mui/material";
 
 const PhotoGallery: React.FC = () => {
   const itemData = [
@@ -39,11 +37,20 @@ const PhotoGallery: React.FC = () => {
   ];
   // 엘레강트...그잡채
   const [isOpen, setIsOpen] = useState(false);
-  const [clickedTarget, setClickedTarget] = useState<number>(0);
+  // const [clickedTarget, setClickedTarget] = useState<number>(0);
   const onImgClickHandler = (event: React.MouseEvent) => {
-    event.target instanceof HTMLImageElement &&
-      setClickedTarget(Number(event.target.id));
+    event.preventDefault();
     setIsOpen(!isOpen);
+    setTimeout(() => {
+      const targetImage = document.getElementById(
+        event.target instanceof HTMLImageElement
+          ? `modal-image-${event.target.id}`
+          : ""
+      );
+      const targetImageXPosition = Number(targetImage!.offsetLeft);
+      const swipeContainer = document.querySelector(".swipe-container");
+      swipeContainer!.scrollLeft = targetImageXPosition;
+    }, 10);
   };
   return (
     <div style={{ padding: "2rem 0", backgroundColor: "#f9f9f9" }}>
@@ -59,13 +66,23 @@ const PhotoGallery: React.FC = () => {
               src={`${item.img}?w=248&fit=crop&auto=format`}
               alt={item.title}
               loading="lazy"
-              className="singularImg"
             />
           </ImageListItem>
         ))}
       </ImageList>
-      <Modal open={isOpen} onClose={() => setIsOpen(false)}>
-        <img className="modal-transition " src={itemData[clickedTarget].img} />
+      <Modal open={isOpen} onClose={() => setIsOpen(false)} disableAutoFocus>
+        <div className="swipe-container">
+          {itemData.map((item, idx) => {
+            return (
+              <img
+                key={idx}
+                id={`modal-image-${idx}`}
+                alt={item.title}
+                src={item.img}
+              />
+            );
+          })}
+        </div>
       </Modal>
     </div>
   );

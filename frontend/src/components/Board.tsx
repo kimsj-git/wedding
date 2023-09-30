@@ -3,7 +3,7 @@ import LetterForm from "./LetterForm";
 import LetterList from "./LetterList";
 import Letter from "../models/letter";
 
-const Board: React.FC<{}> = () => {
+const Board: React.FC = () => {
   const API_URL = "https://wedding.kimsj.dev/board/";
   const [letters, setLetters] = useState<Letter[]>([]);
 
