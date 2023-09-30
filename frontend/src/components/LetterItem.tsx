@@ -1,4 +1,6 @@
 import Letter from "../models/letter";
+import IconButton from "@mui/material/IconButton";
+import DeleteIcon from "@mui/icons-material/Delete";
 
 const LetterItem: React.FC<{
   item: Letter;
@@ -20,9 +22,11 @@ const LetterItem: React.FC<{
           }}
         >
           <p id="name">From: {props.item.name}</p>
-          <button onClick={() => props.onDeleteLetter(props.item.id)}>
-            삭제
-          </button>
+          <div>
+            <IconButton onClick={() => props.onDeleteLetter(props.item.id)}>
+              <DeleteIcon />
+            </IconButton>
+          </div>
         </div>
         <div
           style={{
