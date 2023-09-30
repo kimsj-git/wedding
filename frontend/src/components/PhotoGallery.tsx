@@ -65,7 +65,12 @@ const PhotoGallery: React.FC = () => {
         ))}
       </ImageList>
       <Modal open={isOpen} onClose={() => setIsOpen(false)} disableAutoFocus>
-        <img className="modal-transition" src={itemData[clickedTarget].img} />
+        <div className="swipe-container">
+          {itemData.map((item) => (
+            <img className="modal-img" src={item.img} />
+          ))}
+        </div>
+        {/* <img className="modal-img" src={itemData[clickedTarget].img} /> */}
       </Modal>
     </div>
   );
