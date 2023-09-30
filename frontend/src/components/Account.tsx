@@ -5,7 +5,7 @@ import "./Account.css";
 
 import elegantBorder from "../assets/icons/elegant_leaf.png";
 
-const Account: React.FC<{}> = () => {
+const Account: React.FC = () => {
   const [isGroom, setIsGroom] = useState(false);
   const toggleGroomAccounts = () => {
     if (isBride) setIsBride(false);

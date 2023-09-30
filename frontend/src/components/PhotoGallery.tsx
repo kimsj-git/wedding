@@ -65,7 +65,7 @@ const PhotoGallery: React.FC = () => {
         ))}
       </ImageList>
       <Modal open={isOpen} onClose={() => setIsOpen(false)} disableAutoFocus>
-        <img className="modal-transition " src={itemData[clickedTarget].img} />
+        <img className="modal-transition" src={itemData[clickedTarget].img} />
       </Modal>
     </div>
   );

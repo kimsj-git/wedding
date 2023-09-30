@@ -1,4 +1,4 @@
-const FamilyInfo: React.FC<{}> = () => {
+const FamilyInfo: React.FC = () => {
   return (
     <>
       <div className="family-name">
