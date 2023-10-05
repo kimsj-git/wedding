@@ -48,16 +48,27 @@ const Board: React.FC = () => {
       });
   };
 
-  const deleteLetterHandler = (id: number) => {
-    alert();
-    fetch(API_URL + id, {
+  const deleteLetterHandler = (id: number, pw: string) => {
+    fetch(API_URL + String(id), {
       method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      mode: "cors",
+      body: JSON.stringify({
+        password: pw,
+      }),
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data === 1) {
+        if (data === true) {
           setLetters((letters) => letters.filter((letter) => letter.id !== id));
+        } else {
+          alert("비밀번호가 일치하지 않습니다. 🙅‍♀️")
         }
+      })
+      .catch((err) => {
+        console.error(err);
       });
   };
   return (
