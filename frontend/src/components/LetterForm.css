@@ -39,7 +39,7 @@
 
 .input-box label {
   text-align: start;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
 }
 
 .input-box input {
@@ -56,4 +56,5 @@
 
 .input-tag::placeholder {
   font-family: "MapoFlowerIsland";
+  font-size: 1rem;
 }
