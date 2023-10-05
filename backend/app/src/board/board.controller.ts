@@ -29,6 +29,11 @@ export class BoardController {
 
   @Delete(':id')
   remove(@Param('id') id: string, @Body('password') password: string) {
-    return this.boardService.remove(+id, password);
+    try {
+      const result = this.boardService.remove(+id, password);
+      return result;
+    } catch (err) {
+      throw err;
+    }
   }
 }
