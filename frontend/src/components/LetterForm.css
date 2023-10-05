@@ -26,3 +26,34 @@
   align-items: center;
   margin: 1rem;
 }
+
+.input-box {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid lightgray;
+  border-radius: 1rem;
+  width: 100%;
+  margin: 0 0 1rem 0;
+  padding: 1rem;
+}
+
+.input-box label {
+  text-align: start;
+  font-size: 0.9rem;
+}
+
+.input-box input {
+  border: none;
+}
+
+.input-box textarea {
+  border: none;
+}
+
+.input-tag::placeholder {
+  font-family: "MapoFlowerIsland";
+}
+
+.input-tag::placeholder {
+  font-family: "MapoFlowerIsland";
+}

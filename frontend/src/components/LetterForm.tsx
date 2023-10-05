@@ -16,15 +16,14 @@ const LetterForm: React.FC<{
     const enteredMessage = letterMessageInputRef.current!.value;
 
     if (enteredName.trim().length === 0 || enteredMessage.trim().length === 0) {
+      alert("모든 항목을 입력해주세요. 🙏");
+      // throw new Error("Enter valid name and message");
+    } else {
+      props.onAddLetter(enteredName, enteredPassword, enteredMessage);
       letterNameInputRef.current!.value = "";
+      letterPasswordInputRef.current!.value = "";
       letterMessageInputRef.current!.value = "";
-      throw new Error("Enter valid name and message");
     }
-
-    props.onAddLetter(enteredName, enteredPassword, enteredMessage);
-    letterNameInputRef.current!.value = "";
-    letterPasswordInputRef.current!.value = "";
-    letterMessageInputRef.current!.value = "";
   };
 
   return (
@@ -36,19 +35,37 @@ const LetterForm: React.FC<{
 
       <form onSubmit={submitHandler}>
         <div className="visitor-book-form">
-          <label htmlFor="name">이름</label>
-          <input type="text" id="name" ref={letterNameInputRef} />
-
-          <label htmlFor="pw">비밀번호</label>
-          <input type="password" id="pw" ref={letterPasswordInputRef} />
-
-          <label htmlFor="message">메시지</label>
-          <textarea
-            id="message"
-            rows={3}
-            cols={30}
-            ref={letterMessageInputRef}
-          ></textarea>
+          <div className="input-box">
+            <label htmlFor="name">이름</label>
+            <input
+              type="text"
+              id="name"
+              className="input-tag"
+              placeholder="이름을 입력해주세요"
+              ref={letterNameInputRef}
+            />
+          </div>
+          <div className="input-box">
+            <label htmlFor="pw">비밀번호</label>
+            <input
+              type="password"
+              id="pw"
+              className="input-tag"
+              placeholder="비밀번호를 입력해주세요"
+              ref={letterPasswordInputRef}
+            />
+          </div>
+          <div className="input-box">
+            <label htmlFor="message">메시지</label>
+            <textarea
+              id="message"
+              rows={3}
+              cols={30}
+              className="input-tag"
+              placeholder="메시지를 입력해주세요"
+              ref={letterMessageInputRef}
+            ></textarea>
+          </div>
 
           <button type="submit">방명록 남기기</button>
         </div>
